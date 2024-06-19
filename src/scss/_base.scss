@@ -1,0 +1,41 @@
+@import "./design";
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $white;
+  background-color: $blackish;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  @include h1;
+  text-transform: uppercase;
+}
+h2 {
+  @include h2;
+  text-transform: uppercase;
+}
+h3 {
+  @include h3;
+  text-transform: uppercase;
+}
+h4 {
+  @include h4;
+  opacity: 50%;
+  text-transform: uppercase;
+}
+p {
+  @include body;
+}
+
+button {
+  @include button;
+}

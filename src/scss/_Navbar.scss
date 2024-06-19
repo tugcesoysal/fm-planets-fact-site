@@ -1,0 +1,108 @@
+@import "./design";
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border-bottom: 1px solid $border;
+
+  .icon-menu {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+    padding: 16px 24px;
+
+    .mobile {
+      display: none;
+    }
+
+    .icon-menu {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
+
+.logo {
+  font-family: "Antonio", sans-serif;
+  color: $white;
+  font-size: 28px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+nav {
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    list-style: none;
+
+    li {
+      position: relative;
+      @include h4;
+      color: $white;
+      cursor: pointer;
+      text-transform: uppercase;
+      opacity: 75%;
+
+      &:hover {
+        opacity: 1;
+
+        &::before {
+          position: absolute;
+          top: -28px;
+          content: "";
+          width: 100%;
+          height: 5px;
+          background-color: $blue;
+
+          @media (max-width: 1000px) {
+            top: 40px;
+          }
+        }
+      }
+
+      &.Mercury:hover::before {
+        background-color: $mercury;
+      }
+
+      &.Venus:hover::before {
+        background-color: $venus;
+      }
+
+      &.Earth:hover::before {
+        background-color: $earth;
+      }
+
+      &.Mars:hover::before {
+        background-color: $mars;
+      }
+
+      &.Jupiter:hover::before {
+        background-color: $jupiter;
+      }
+
+      &.Saturn:hover::before {
+        background-color: $saturn;
+      }
+
+      &.Uranus:hover::before {
+        background-color: $uranus;
+      }
+
+      &.Neptune:hover::before {
+        background-color: $neptune;
+      }
+    }
+  }
+}

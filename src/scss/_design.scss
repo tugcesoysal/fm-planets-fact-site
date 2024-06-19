@@ -1,0 +1,95 @@
+// COLORS
+
+$white: #ffffff;
+$blackish: #070724;
+$dark-grey: #38384f;
+$grey: #838391;
+$blue: #419ebb;
+$mercury: #419ebb;
+$neptune: #2d68f0;
+$venus: #eda249;
+$earth: #6f2ed6;
+$mars: #d14c32;
+$saturn: #cd5120;
+$jupiter: #d83a34;
+$uranus: #1ec2a4;
+$border: rgba(255, 255, 255, 0.2);
+
+// TYPOGRAPHY
+
+@mixin h1 {
+  font-family: "Antonio", sans-serif;
+  font-size: 80px;
+  line-height: 103px;
+}
+
+@mixin h2 {
+  font-family: "Antonio", sans-serif;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+}
+
+@mixin h3 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+  font-weight: bold;
+}
+
+@mixin h4 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+@mixin body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+@mixin button {
+  width: 100%;
+  padding: 12px 28px;
+  @include h3;
+  color: $white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid $border;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  span {
+    opacity: 50%;
+  }
+
+  &:hover {
+    background-color: $border;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 9px;
+    letter-spacing: 1.93px;
+    gap: 15px;
+    padding: 8px 20px;
+    width: 281px;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent !important;
+
+    span {
+      display: none;
+    }
+  }
+}

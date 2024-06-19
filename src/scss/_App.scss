@@ -1,0 +1,289 @@
+@import "./design";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.main {
+  width: 100%;
+  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10%;
+  gap: 10%;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 130px;
+  }
+
+  @media (max-width: 600px) {
+    gap: 90px;
+  }
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 600px) {
+    margin-top: 100px;
+  }
+}
+
+.planet-image {
+  @media (max-width: 600px) {
+    width: 40%;
+  }
+}
+
+.secondary-image {
+  position: absolute;
+  width: 163px;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 600px) {
+    width: 80px;
+  }
+}
+
+.right-side {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  .content {
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    @media (max-width: 1000px) {
+      h1 {
+        @include h2;
+      }
+
+      p {
+        @include h4;
+      }
+    }
+
+    @media (max-width: 600px) {
+      text-align: center;
+      align-items: center;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+    max-width: none;
+  }
+
+  .source {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 50%;
+
+    a {
+      @include body;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+
+  .buttons-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 1000px) {
+      gap: 15px;
+    }
+
+    @media (max-width: 600px) {
+      height: 50px;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      flex-direction: row;
+      border-bottom: 1px solid $border;
+      justify-content: space-between;
+
+      button {
+        position: relative;
+        opacity: 50%;
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.active {
+          opacity: 1;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 5px;
+            width: 50%;
+            background-color: $blue;
+          }
+
+          &.Mercury::after {
+            background-color: $mercury;
+          }
+
+          &.Venus::after {
+            background-color: $venus;
+          }
+
+          &.Earth::after {
+            background-color: $earth;
+          }
+
+          &.Mars::after {
+            background-color: $mars;
+          }
+
+          &.Jupiter::after {
+            background-color: $jupiter;
+          }
+          &.Saturn::after {
+            background-color: $saturn;
+          }
+          &.Uranus::after {
+            background-color: $uranus;
+          }
+          &.Neptune::after {
+            background-color: $neptune;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Mercury.active {
+  background-color: $mercury;
+  border-color: $mercury;
+}
+
+.Venus.active {
+  background-color: $venus;
+  border-color: $venus;
+}
+
+.Earth.active {
+  background-color: $earth;
+  border-color: $earth;
+}
+
+.Mars.active {
+  background-color: $mars;
+  border-color: $mars;
+}
+
+.Jupiter.active {
+  background-color: $jupiter;
+  border-color: $jupiter;
+}
+
+.Saturn.active {
+  background-color: $saturn;
+  border-color: $saturn;
+}
+
+.Uranus.active {
+  background-color: $uranus;
+  border-color: $uranus;
+}
+
+.Neptune.active {
+  background-color: $neptune;
+  border-color: $neptune;
+}
+
+.content-footer {
+  width: 90%;
+  margin: 5% auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @media (max-width: 1000px) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-item {
+    width: 100%;
+    height: 128px;
+    border: 1px solid $border;
+    padding: 20px 23px;
+
+    p {
+      text-transform: uppercase;
+      opacity: 50%;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 1000px) {
+      width: 164px;
+      height: 88px;
+      padding: 16px;
+
+      p {
+        font-size: 8px;
+        line-height: 16px;
+        letter-spacing: 0.73px;
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: auto;
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: 85%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 23px;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

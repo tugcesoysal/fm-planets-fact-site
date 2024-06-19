@@ -1,0 +1,553 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #070724;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Antonio", sans-serif;
+  font-size: 80px;
+  line-height: 103px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Antonio", sans-serif;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  opacity: 50%;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+button {
+  width: 100%;
+  padding: 12px 28px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+button span {
+  opacity: 50%;
+}
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 1000px) {
+  button {
+    font-size: 9px;
+    letter-spacing: 1.93px;
+    gap: 15px;
+    padding: 8px 20px;
+    width: 281px;
+  }
+}
+@media (max-width: 600px) {
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent !important;
+  }
+  button span {
+    display: none;
+  }
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.navbar .icon-menu {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .navbar {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    padding: 16px 24px;
+  }
+  .navbar .mobile {
+    display: none;
+  }
+  .navbar .icon-menu {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  font-family: "Antonio", sans-serif;
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+  list-style: none;
+}
+nav ul li {
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  text-transform: uppercase;
+  opacity: 75%;
+}
+nav ul li:hover {
+  opacity: 1;
+}
+nav ul li:hover::before {
+  position: absolute;
+  top: -28px;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #419ebb;
+}
+@media (max-width: 1000px) {
+  nav ul li:hover::before {
+    top: 40px;
+  }
+}
+nav ul li.Mercury:hover::before {
+  background-color: #419ebb;
+}
+nav ul li.Venus:hover::before {
+  background-color: #eda249;
+}
+nav ul li.Earth:hover::before {
+  background-color: #6f2ed6;
+}
+nav ul li.Mars:hover::before {
+  background-color: #d14c32;
+}
+nav ul li.Jupiter:hover::before {
+  background-color: #d83a34;
+}
+nav ul li.Saturn:hover::before {
+  background-color: #cd5120;
+}
+nav ul li.Uranus:hover::before {
+  background-color: #1ec2a4;
+}
+nav ul li.Neptune:hover::before {
+  background-color: #2d68f0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.main {
+  width: 100%;
+  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10%;
+  gap: 10%;
+}
+@media (max-width: 1000px) {
+  .main {
+    flex-direction: column;
+    gap: 130px;
+  }
+}
+@media (max-width: 600px) {
+  .main {
+    gap: 90px;
+  }
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .left-side {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .planet-image {
+    width: 40%;
+  }
+}
+
+.secondary-image {
+  position: absolute;
+  width: 163px;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 600px) {
+  .secondary-image {
+    width: 80px;
+  }
+}
+
+.right-side {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.right-side .content {
+  width: 100%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+@media (max-width: 1000px) {
+  .right-side .content h1 {
+    font-family: "Antonio", sans-serif;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -1.5px;
+  }
+  .right-side .content p {
+    font-family: "League Spartan", sans-serif;
+    font-size: 11px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 600px) {
+  .right-side .content {
+    text-align: center;
+    align-items: center;
+    min-width: 200px;
+  }
+}
+@media (max-width: 1000px) {
+  .right-side {
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+    max-width: none;
+  }
+}
+.right-side .source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 50%;
+}
+.right-side .source a {
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.right-side .buttons-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .right-side .buttons-div {
+    gap: 15px;
+  }
+}
+@media (max-width: 600px) {
+  .right-side .buttons-div {
+    height: 50px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: space-between;
+  }
+  .right-side .buttons-div button {
+    position: relative;
+    opacity: 50%;
+    transition: opacity 0.3s;
+  }
+  .right-side .buttons-div button:hover {
+    opacity: 1;
+  }
+  .right-side .buttons-div button.active {
+    opacity: 1;
+  }
+  .right-side .buttons-div button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 50%;
+    background-color: #419ebb;
+  }
+  .right-side .buttons-div button.active.Mercury::after {
+    background-color: #419ebb;
+  }
+  .right-side .buttons-div button.active.Venus::after {
+    background-color: #eda249;
+  }
+  .right-side .buttons-div button.active.Earth::after {
+    background-color: #6f2ed6;
+  }
+  .right-side .buttons-div button.active.Mars::after {
+    background-color: #d14c32;
+  }
+  .right-side .buttons-div button.active.Jupiter::after {
+    background-color: #d83a34;
+  }
+  .right-side .buttons-div button.active.Saturn::after {
+    background-color: #cd5120;
+  }
+  .right-side .buttons-div button.active.Uranus::after {
+    background-color: #1ec2a4;
+  }
+  .right-side .buttons-div button.active.Neptune::after {
+    background-color: #2d68f0;
+  }
+}
+
+.Mercury.active {
+  background-color: #419ebb;
+  border-color: #419ebb;
+}
+
+.Venus.active {
+  background-color: #eda249;
+  border-color: #eda249;
+}
+
+.Earth.active {
+  background-color: #6f2ed6;
+  border-color: #6f2ed6;
+}
+
+.Mars.active {
+  background-color: #d14c32;
+  border-color: #d14c32;
+}
+
+.Jupiter.active {
+  background-color: #d83a34;
+  border-color: #d83a34;
+}
+
+.Saturn.active {
+  background-color: #cd5120;
+  border-color: #cd5120;
+}
+
+.Uranus.active {
+  background-color: #1ec2a4;
+  border-color: #1ec2a4;
+}
+
+.Neptune.active {
+  background-color: #2d68f0;
+  border-color: #2d68f0;
+}
+
+.content-footer {
+  width: 90%;
+  margin: 5% auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .content-footer {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 600px) {
+  .content-footer {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.content-footer .footer-item {
+  width: 100%;
+  height: 128px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 23px;
+}
+.content-footer .footer-item p {
+  text-transform: uppercase;
+  opacity: 50%;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+@media (max-width: 1000px) {
+  .content-footer .footer-item {
+    width: 164px;
+    height: 88px;
+    padding: 16px;
+  }
+  .content-footer .footer-item p {
+    font-size: 8px;
+    line-height: 16px;
+    letter-spacing: 0.73px;
+  }
+  .content-footer .footer-item h2 {
+    font-size: 24px;
+    line-height: auto;
+    letter-spacing: -1px;
+  }
+}
+@media (max-width: 600px) {
+  .content-footer .footer-item {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 23px;
+  }
+  .content-footer .footer-item p {
+    margin-bottom: 0;
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 70px;
+  background-color: #070724;
+  z-index: 2;
+  padding: 24px 24px;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.menu ul li {
+  width: 100%;
+  font-family: "League Spartan", sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 25px;
+  letter-spacing: 1.36px;
+  text-transform: uppercase;
+  padding: 20px 8px;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.menu ul li div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+.menu ul li div.Mercury {
+  background-color: #419ebb;
+}
+.menu ul li div.Venus {
+  background-color: #eda249;
+}
+.menu ul li div.Earth {
+  background-color: #6f2ed6;
+}
+.menu ul li div.Mars {
+  background-color: #d14c32;
+}
+.menu ul li div.Jupiter {
+  background-color: #d83a34;
+}
+.menu ul li div.Saturn {
+  background-color: #cd5120;
+}
+.menu ul li div.Uranus {
+  background-color: #1ec2a4;
+}
+.menu ul li div.Neptune {
+  background-color: #2d68f0;
+}
+.menu ul li .icon-chevron {
+  margin-left: auto;
+}
+.menu ul li .icon-chevron:hover path {
+  fill: #ffffff;
+}/*# sourceMappingURL=index.css.map */
